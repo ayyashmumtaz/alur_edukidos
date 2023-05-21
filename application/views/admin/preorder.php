@@ -6,7 +6,7 @@ $(document).ready(function() {
         'processing': true,
         'serverSide': true,
         'ajax': {
-            'url': '<?php echo base_url('home/getPekerjaanTable'); ?>',
+            'url': '<?php echo site_url('home/getPekerjaanTable'); ?>',
             'type': 'GET'
         },
         'columns': [
@@ -81,7 +81,7 @@ return buttonHtml;
             <?php endif ?>
           
         <!--  Row 1 -->
-        <a class="btn btn-sm btn-success" href="<?= base_url('admin/addPekerjaan'); ?>">+ Tambah Pekerjaan</a>
+        <a class="btn btn-sm btn-success" href="<?= site_url('admin/addPekerjaan'); ?>">+ Tambah Pekerjaan</a>
 <br>
 <br>
         <div class="row">

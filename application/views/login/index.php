@@ -147,7 +147,7 @@
     <h1><center>Edukidos Shift System</center></h1>
     <br>
     <br>
-        <form action="<?= base_url('login/aksi_login');?>" method="POST" class="form-content">
+        <form action="<?= site_url('login/aksi_login');?>" method="POST" class="form-content">
             <div class="form-item">
                 <input type="text" class="text" name="username" required="">
                 <label class="move" name="username" for="username">Username</label>

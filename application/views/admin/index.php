@@ -34,7 +34,7 @@ $(document).ready(function() {
         'processing': true,
         'serverSide': true,
         'ajax': {
-            'url': '<?php echo base_url('home/getPekerjaanTable'); ?>',
+            'url': '<?php echo site_url('home/getPekerjaanTable'); ?>',
             'type': 'GET'
         },
         columnDefs: [
@@ -104,7 +104,7 @@ return buttonHtml;
     }
 
     $.ajax({
-            url: '<?php echo base_url('home/getPekerjaanTable'); ?>',
+            url: '<?php echo site_url('home/getPekerjaanTable'); ?>',
             type: 'GET',
             dataType: 'json',
             success: function(response) {

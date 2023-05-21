@@ -24,7 +24,7 @@
               <span class="hide-menu">Home</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="<?= base_url();?>" aria-expanded="false">
+              <a class="sidebar-link" href="<?= site_url();?>" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
                 </span>
@@ -36,7 +36,7 @@
               <span class="hide-menu">DATA PEKERJAAN</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="<?= base_url('preorder');?>" aria-expanded="false">
+              <a class="sidebar-link" href="<?= site_url('preorder');?>" aria-expanded="false">
                 <span>
                   <i class="ti ti-article"></i>
                 </span>
@@ -44,7 +44,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="<?= base_url('preorder/selesai');?>" aria-expanded="false">
+              <a class="sidebar-link" href="<?= site_url('preorder/selesai');?>" aria-expanded="false">
                 <span>
                   <i class="ti ti-alert-circle"></i>
                 </span>
@@ -52,7 +52,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="<?= base_url('preorder/masalah');?>" aria-expanded="false">
+              <a class="sidebar-link" href="<?= site_url('preorder/masalah');?>" aria-expanded="false">
                 <span>
                   <i class="ti ti-cards"></i>
                 </span>
@@ -65,7 +65,7 @@
               <span class="hide-menu">DATA KANTOR</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="<?= base_url('admin/karyawan');?>" aria-expanded="false">
+              <a class="sidebar-link" href="<?= site_url('admin/karyawan');?>" aria-expanded="false">
                 <span>
                   <i class="ti ti-login"></i>
                 </span>
@@ -73,7 +73,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="<?= base_url('admin/user');?>" aria-expanded="false">
+              <a class="sidebar-link" href="<?= site_url('admin/user');?>" aria-expanded="false">
                 <span>
                   <i class="ti ti-user-plus"></i>
                 </span>
