@@ -9,6 +9,8 @@ class Home extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('M_home');
+        date_default_timezone_set('Asia/Jakarta');
+
         
        
         
@@ -55,16 +57,30 @@ public function kerjakan()
     {
     $id = $this->input->post('id');
     // $status = 'proses';
-    $status = array('status' => 'proses');
+    $status = array('status' => 'proses', 'waktu_mulai' => date('Y-m-d H:i:s'));
 
     $this->db->where('id_kerja', $id);
-    $this->db->update('pekerjaan', $status);
+    $this->db->update('pekerjaan', $status);    
 
     // Mengirim respons kembali ke permintaan Ajax
     $response = array('status' => 'success', 'message' => 'Data berhasil diperbarui, Segera kerjakan!');
     echo json_encode($response);
     }
 
+
+    public function selesaikan()
+    {
+    $id = $this->input->post('id');
+    // $status = 'proses';
+    $status = array('status' => 'selesai', 'waktu_selesai' => date('Y-m-d H:i:s'));
+
+    $this->db->where('id_kerja', $id);
+    $this->db->update('pekerjaan', $status);    
+
+    // Mengirim respons kembali ke permintaan Ajax
+    $response = array('status' => 'success', 'message' => 'Data berhasil diperbarui, Segera kerjakan!');
+    echo json_encode($response);
+    }
 
 
         

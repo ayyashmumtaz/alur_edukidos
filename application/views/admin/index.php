@@ -77,6 +77,12 @@ switch (id_bekerja) {
   case 'belum':
                buttonHtml = ' <button class="badge bg-primary rounded-3 fw-semibold editButton" data-id="'+ row.id_kerja +'">KLIK UNTUK MENGERJAKAN</button>';
     break;
+    case 'selesai':
+               buttonHtml = 'Selesai :'+ row.waktu_selesai +'';
+    break;
+    case 'proses':
+               buttonHtml = ' <button class="badge bg-secondary rounded-3 fw-semibold doneButton" data-id="'+ row.id_kerja +'">KLIK JIKA SUDAH SELESAI</button>';
+    break;
     default:
  buttonHtml = ''
     break;
@@ -128,7 +134,7 @@ return buttonHtml;
     function fetchData() {
       
         $.ajax({
-            url: '<?php echo base_url('home/getPekerjaanTable'); ?>',
+            url: '<?php echo site_url('home/getPekerjaanTable'); ?>',
             type: 'GET',
             dataType: 'json',
             success: function(response) {
@@ -178,7 +184,7 @@ $('#example tbody').on('click', '.editButton', function(){
       var status = 'proses';
       console.log(id);
         $.ajax({
-            url: '<?php echo base_url("home/kerjakan"); ?>',
+            url: '<?php echo site_url("home/kerjakan"); ?>',
             method: 'POST',
             data: { id: id, status: status },
             dataType: 'json',
@@ -197,6 +203,33 @@ $('#example tbody').on('click', '.editButton', function(){
           });
         
            
+});
+
+$('#example tbody').on('click', '.doneButton', function(){
+
+var id = $(this).data('id');
+var status = 'selesai';
+console.log(id);
+  $.ajax({
+      url: '<?php echo site_url("home/selesaikan"); ?>',
+      method: 'POST',
+      data: { id: id, status: status },
+      dataType: 'json',
+      success: function(response) {
+          // Tindakan setelah pembaruan data berhasil
+          if (response.status === 'success') {
+              alert(response.message);
+             table.ajax.reload(); // Memuat ulang tabel setelah pembaruan data berhasil
+          } else {
+              alert('Terjadi kesalahan saat memperbarui data');
+          }
+      },
+      error: function() {
+          alert('Terjadi kesalahan pada permintaan Ajax');
+      }
+    });
+  
+     
 });
 
     
