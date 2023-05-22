@@ -301,7 +301,16 @@ console.log(id);
        
 
           
-        <h2 style="margin-bottom:20px; margin-top:6px;">Shift Hari Ini</h2>
+        <h2 style="margin-bottom:20px; margin-top:6px;">Shift 
+      <?php $waktu = date('H:i:s');
+
+if($waktu >= '07:00:00' && $waktu <= '17:00:00'){
+  echo "Pagi Hari Ini";
+}elseif($waktu >= '18:00:00' && $waktu <= '23:59:59'){
+  echo "Malam Hari Ini";
+}
+      ?>
+      </h2>
           <div class="col-sm-2 col-md-1">
             
             <div class="card overflow-hidden rounded-2">
